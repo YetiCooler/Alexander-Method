@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PtDtcRelation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../Dev/schema/sds/ecuSystem/PtDtcRelation/PtDtcRelation.xsd">
+	<DtcNr></DtcNr>
+	<EcuSystemFamily ref="PtEcuSystemFamily"></EcuSystemFamily>
+	<EcuSystemExecution ref="PtEcuSystemExecution"></EcuSystemExecution>
+	<ServerExecution ref="PtServerExecution"></ServerExecution>
+	<DtcInstanceRef ref="DtcInstance"></DtcInstanceRef>
+    <ReferenceList>
+      <ObjectRefList>
+         <CircuitRefContainer>
+            <EcuSystemExecution ref="PtEcuSystemExecution"></EcuSystemExecution>
+            <ServerExecution ref="PtServerExecution"></ServerExecution>
+            <CircuitName ref="PtCircuit"></CircuitName>
+            <CanAddress></CanAddress>
+            <WarningSymbol>true</WarningSymbol>
+         </CircuitRefContainer>
+      </ObjectRefList>
+   </ReferenceList>
+</PtDtcRelation>
+ 
