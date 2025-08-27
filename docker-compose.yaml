@@ -51,6 +51,26 @@ services:
       ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
       ME_CONFIG_BASICAUTH: false
 
+  vllm:
+    image: vllm/vllm-openai:latest
+    container_name: my_vllm_container
+    restart: unless-stopped
+    runtime: nvidia
+    ipc: host
+    ports:
+      - "9000:9000"
+    environment:
+      HUGGING_FACE_HUB_TOKEN: ${HUGGING_FACE_HUB_TOKEN}
+    volumes:
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    command: ["--model", "NovaSky-AI/Sky-T1-32B-Flash"]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
 
 volumes:
   qdrant_data:
